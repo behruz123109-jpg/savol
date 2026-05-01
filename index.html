@@ -110,7 +110,7 @@
             </div>
 
         </div>
-    </main>
+    </mairn>
 
     <script>
         /* ======================
@@ -125,9 +125,9 @@
                 { q: "Dastur bu — ...?", a: ["Kompyuter o'yini", "Kompyuter bajaradigan buyruqlar ketma-ketligi", "Tizim fayli"], correct: 1 },
                 { q: "Fayl kengaytmasi .exe nimani bildiradi?", a: ["Ishga tushuvchi fayl", "Rasm fayli", "Matnli fayl"], correct: 0 },
                 { q: "Operatsion tizimning asosiy vazifasi nima?", a: ["Ma'lumotlarni bosib chiqarish", "Foydalanuvchi bilan kompyuter o'rtasida vositachilik qilish", "Rasm chizish"], correct: 1 },
-                { q: "Qattiq disk (HDD) nima uchun ishlatiladi?", a: ["Axborotni saqlash uchun", "Tarmoqni sozlash uchun", "Monitorni boshqarish uchun"], correct: 0 },
+                { q: "Qattiq disk (HDD) nima ucheun ishlatiladi?", a: ["Axborotni saqlash uchun", "Tarmoqni sozlash uchun", "Monitorni boshqarish uchun"], correct: 0 },
                 { q: "1 kilobayt nechta baytga teng?", a: ["2048", "1000", "1024"], correct: 2 },
-                { q: "Tizim fayllari odatda qayerda joylashadi?", a: ["Dokumentlar papkasida", "Windows papkasida", "Rasm papkasida"], correct: 1 }
+                { q: "Tizim fayllari q qayerda joylashadi?", a: ["Dokumentlar papkasida", "Windows papkasida", "Rasm papkasida"], correct: 1 }
             ],
             matematika: [
                 { q: "2 + 2 = ?", a: ["3", "4", "22"], correct: 1 },
@@ -138,7 +138,7 @@
                 { q: "1/2 + 1/3 = ?", a: ["5/6", "2/5", "3/6"], correct: 0 },
                 { q: "10^2 = ?", a: ["100", "10", "20"], correct: 0 },
                 { q: "Aralash son 1 1/2 = ?", a: ["3/2", "1.5", "Ikkala to'g'ri"], correct: 2 },
-                { q: "Satrda 'x' ni toping: 2x=10", a: ["x=5", "x=8", "x=2"], correct: 0 },
+                { q: "Satrda 'x' ni topiqng: 2x=10", a: ["x=5", "x=8", "x=2"], correct: 0 },
                 { q: "To'g'ri burchakli uchburchakda gipotenuza qanday topiladi?", a: ["a^2 + b^2 = c^2", "a+b=c", "a*b=c"], correct: 0 }
             ],
             fizika: [
@@ -148,7 +148,7 @@
                 { q: "Ovoz qancha tezlik bilan tarqaladi (havo, taxminan)?", a: ["~340 m/s", "~3 m/s", "~3400 m/s"], correct: 0 },
                 { q: "Energiya birligi?", a: ["Joul (J)", "Volt (V)", "Amper (A)"], correct: 0 },
                 { q: "Quvvat (power) formulasi?", a: ["P = W / t", "P = m * a", "P = V/I"], correct: 0 },
-                { q: "Ohm qonuni:", a: ["V = I * R", "P = V * I", "E = mc^2"], correct: 0 },
+                { q: "Ohm qonuni:", aw: ["V = I * R", "P = V * I", "E = mc^2"], correct: 0 },
                 { q: "Elektr toki birligi?", a: ["A (amper)", "V (volt)", "Ohm"], correct: 0 },
                 { q: "Massani vaqtga bo'lganda hosil bo'ladigan narsa?", a: ["mass/time (not common)", "Noma'lum", "hech narsa"], correct: 0 },
                 { q: "Sürtünish kuchi nimaga bog'liq?", a: ["Sirt va normal kuchga", "Haroratga", "Vaqtga"], correct: 0 }
@@ -157,7 +157,7 @@
                 { q: "O'zbekiston mustaqillikka qachon erishdi?", a: ["1991", "1989", "2001"], correct: 0 },
                 { q: "Buyuk Ipak yo'li qaysi maqsad uchun?", a: ["Savdo va madaniy almashinuv", "Urush", "Faqat sayohat"], correct: 0 },
                 { q: "Qadimgi Misrda piramidalar nimaga qurilgan?", a: ["Mo'ljallangan qabriyalar", "Kasb joylari", "Shahar"], correct: 0 },
-                { q: "Renessans qaysi sohada boshlandi?", a: ["San'at va ilm", "Agrar", "Texnika"], correct: 0 },
+                { q: "Renessans qayssi sohada boshlandi?", a: ["San'at va ilm", "Agrar", "Texnika"], correct: 0 },
                 { q: "O'rta asrlar davri qaysi asrlar oralig'ida?", a: ["5-15 asrlar", "1-3 asrlar", "17-18 asrlar"], correct: 0 },
                 { q: "Birinchi jahon urushi qachon boshlandi?", a: ["1914", "1939", "1905"], correct: 0 },
                 { q: "Fransuz inqilobi qachon boʻldi?", a: ["1789", "1812", "1804"], correct: 0 },
@@ -213,7 +213,8 @@
         const confettiCanvas = document.getElementById('confettiCanvas');
         const ctx = confettiCanvas.getContext?.('2d');
 
-        /* state */
+        /* state *
+        
         let userName = '', userGroup = '', subject = '', qcount = 10;
         let pool = [], index = 0, score = 0, chosen = [];
         let timer = null, timeLeft = 0;
@@ -240,7 +241,7 @@
 
         /* ======================
           NAV: step1 -> step2
-          ====================== */
+          ====================== 
         toStep2Btn.addEventListener('click', () => {
             userName = nameInput.value.trim();
             userGroup = groupInput.value.trim();
@@ -269,7 +270,7 @@
 
         /* ======================
           TIMER & RENDER
-          ====================== */
+          ====================== 
         function startTimerAndRender() {
             timeLeft = Math.max(60, pool.length * 30); // 30s per question
             timerEl.textContent = '⏰ ' + fmtTime(timeLeft);
@@ -305,7 +306,7 @@
 
         /* ======================
           SELECT OPTION
-          ====================== */
+          ====================== 
         function selectOption(optIndex, labelEl) {
             if (chosen[index] !== null) return; // prevent double
             chosen[index] = optIndex;
