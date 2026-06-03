@@ -238,10 +238,7 @@
         function resizeCanvas() { if (!ctx) return; confettiCanvas.width = window.innerWidth; confettiCanvas.height = window.innerHeight; }
         window.addEventListener('resize', resizeCanvas);
         resizeCanvas();
-
-        /* ======================
-          NAV: step1 -> step2
-          ====================== 
+        
         toStep2Btn.addEventListener('click', () => {
             userName = nameInput.value.trim();
             userGroup = groupInput.value.trim();
@@ -264,13 +261,10 @@
             metaSubject.textContent = subject.charAt(0).toUpperCase() + subject.slice(1);
             goto(3);
             startTimerAndRender();
-            // notify start (optional) - comment if not needed
-            // sendTelegramMessage(`📝 Test boshlandi\nIsm: ${userName}\nGuruh: ${userGroup}\nFan: ${subject}\nSavollar: ${pool.length}`);
+            notify start (optional) - comment if not needed
+            sendTelegramMessage(`📝 Test boshlandi\nIsm: ${userName}\nGuruh: ${userGroup}\nFan: ${subject}\nSavollar: ${pool.length}`);
         });
 
-        /* ======================
-          TIMER & RENDER
-          ====================== 
         function startTimerAndRender() {
             timeLeft = Math.max(60, pool.length * 30); // 30s per question
             timerEl.textContent = '⏰ ' + fmtTime(timeLeft);
@@ -304,9 +298,6 @@
             submitBtn.classList.toggle('hidden', index < pool.length - 1);
         }
 
-        /* ======================
-          SELECT OPTION
-          ====================== 
         function selectOption(optIndex, labelEl) {
             if (chosen[index] !== null) return; // prevent double
             chosen[index] = optIndex;
